@@ -13,4 +13,4 @@ Once you have downloaded the image, you can run the pscan docker with the minima
 *docker run -d -p 8080:80 pscanimage*
 
 The image expose the docker on the port 80, so after running the docker you can access to the graphic interface of pscan by using the host
-IP adress
+IP address
