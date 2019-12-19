@@ -1,24 +1,24 @@
-# Pscan-ChIP and Pscan-ChIP GUI
+# Pscan and Pscan GUI
 
-PscanChIP is a web server that, starting from a collection of genomic regions derived from a ChIP-Seq experiment, scans them using motif descriptors like JASPAR or TRANSFAC position-specific frequency matrices, or descriptors uploaded by users, and it evaluates both motif enrichment and positional bias within the regions according to different measures and criteria. PscanChIP can successfully identify not only the actual binding sites for the TF investigated by a ChIP-Seq experiment but also secondary motifs corresponding to other TFs that tend to bind the same regions, and, if present, precise positional correlations among their respective sites.   
+Pscan is a software tool that scans a set of sequences (e.g. promoters) from co-regulated or co-expressed genes with motifs describing the binding specificity of known transcription factors and assesses which motifs are significantly over- or under-represented, providing thus hints on which transcription factors could be common regulators of the genes studied, together with the location of their candidate binding sites in the sequences. Pscan does not resort to comparisons with orthologous sequences and experimental results show that it compares favorably to other tools for the same task in terms of false positive predictions and computation time.     
 
-Address: (http://www.beaconlab.it/pscan_chip_dev)
+Address: (http://www.beaconlab.it/pscan)
 
-**Reference**  
-F.Zambelli, G.Pesole, G.Pavesi    
-[PscanChIP: finding over-represented transcription factor-binding site motifs and their correlations in sequences from ChIP-Seq experiments.](https://academic.oup.com/nar/article/41/W1/W535/1105963)    
-*Nucleic Acids Research 2013; doi: 10.1093/nar/gkt448*
+**Reference**:  
+F.Zambelli, G.Pesole, G.Pavesi     
+[Pscan: Finding Over-represented Transcription Factor Binding Site Motifs in Sequences from Co-Regulated or Co-Expressed Genes.](https://academic.oup.com/nar/article/37/suppl_2/W247/1156104)     
+*Nucleic Acids Research* 2009 37(Web Server issue):W247-W252. 
 
+For more info see: [Beacon Lab](http://159.149.160.56/beacon/)  
+If you need HELP click [*here*](http://159.149.160.88/pscan/help.html)
 
-For more info see: [Beacon Lab](http://159.149.160.56/beacon/)     
-If you need HELP click [*here*](http://159.149.160.88/pscan_chip_dev/help.html)
+The Dockerfile is written to build a docker image of the Pscan tool             
+The image is based on centOS 7 and run the tool on Apache/2.4.6.    
+It contains both the binary code and the graphic interface of the Pscan Tool.  
 
-The Dockerfile is written to build a docker image of the Pscan tool
-The image is based on centOS 7 and run the tool on Apache/2.4.6    
-It contains both the binary code and the graphic interface of the Pscan-ChIP Tool.   
+Once you have downloaded the image, you can run the pscan docker with the minimal command:
 
-Once you have downloaded the image, you can run the Pscan-ChIP docker with the minimal command:
+*docker run -d -p 8080:80 pscanimage*
 
-*docker run -d -p 8080:80 pscan_chip_image*
-
-The image expose the docker on the port 8080, so after running the docker you can access to the graphic interface of Pscan-ChIP by using *host IP address:8080*
+The image expose the docker on the port 8080, so after running the docker you can access to the graphic interface of pscan by using *host
+IP address:8080*
